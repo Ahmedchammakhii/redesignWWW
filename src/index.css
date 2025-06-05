@@ -1,0 +1,21 @@
+:root  {
+  text-decoration: none;
+  background-color: rgb(22, 22, 22);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+   margin: 0 ;
+  padding: 0;
+}
+
+body {
+    background-image: url(/background-dots.webp);
+    background-repeat: repeat;
+    -webkit-font-smoothing: antialiased;
+    background-size: 33.206rem 33.206rem;
+}
+
