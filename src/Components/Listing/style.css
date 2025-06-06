@@ -1,0 +1,11 @@
+
+
+
+ 
+@media screen and (max-width:550px)  {
+    #theProjEffect {
+   display: none !important; }
+   #theProjEffectMobile {
+display: flex !important;
+   }
+  }
