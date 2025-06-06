@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "./styles.css"
 import gsap from "gsap";
 import Observer from "gsap/dist/Observer";
+import Scene from "../Scene/Scene";
 const Marquee = () => {
     useEffect(()=>{
 gsap.registerPlugin(Observer);
@@ -92,7 +93,7 @@ function horizontalLoop(items, config) {
     },[])
   return (
 <div className="MarqueeText__container">
-  
+  <Scene/>
       <div className="MarqueeText__container_text">
 
         <h4></h4>

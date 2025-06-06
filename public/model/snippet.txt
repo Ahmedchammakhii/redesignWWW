@@ -1,0 +1,11 @@
+<model-viewer src="skip-v1.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1.1" camera-target="-200m 26.6m -63.09m" camera-orbit="159.3deg 76.21deg 1906m" field-of-view="30deg" exposure="1.24">
+    <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+        View in your space
+    </button>
+    <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+    </div>
+</model-viewer>
