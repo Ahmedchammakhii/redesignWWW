@@ -92,6 +92,7 @@ function horizontalLoop(items, config) {
     },[])
   return (
 <div className="MarqueeText__container">
+  
       <div className="MarqueeText__container_text">
 
         <h4></h4>
