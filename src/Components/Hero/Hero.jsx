@@ -4,7 +4,6 @@ import "./style.css"
 import SplitText from "gsap/dist/SplitText";
 import { useEffect } from "react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ScrollSmoother from "gsap/dist/ScrollSmoother";
 const Hero = () => {
     gsap.registerPlugin(SplitText,ScrollTrigger);
 useEffect(()=>
@@ -16,13 +15,21 @@ const tl=gsap.timeline({scrollTrigger:{
     start:"top bottom",
     scrub:true
 }})
-  tl.from(split.words, {
+  tl.fromTo("#AnimatedTextHero",{y:50},{y:0},"a").from(split.words, {
     opacity: 0,
     duration: 2,
     ease: "sine.out",
     stagger: 0.1,
-  })
-})},[])
+  },"a")
+  
+  gsap.timeline({scrollTrigger:{scrub:true,
+    trigger:".Hero__container_informationFlex",
+    start:"top bottom", toggleActions: "play reverse play reverse"
+}}).fromTo(".left_sideFlex",{y:50},{y:0},'a').fromTo(".right_sideFlex",{y:50},{y:0},'a')
+})
+
+return ()=>ctx.revert()
+},[])
   return (
     <div className="Hero__container" >
       <p>Discover available Skips®</p>
