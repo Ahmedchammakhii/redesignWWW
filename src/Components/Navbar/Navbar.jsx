@@ -33,8 +33,10 @@ Flip.from(state, {
           <p>item : {SelectedSkip.size}yard skip</p>
           <p>price :£ {SelectedSkip.price_before_vat} </p>
 </div>
+<div style={{display:"flex"}}>
 <div className="roundButton" style={{scale:.7,cursor:"pointer"}}>Prev</div>
 <div className="roundButton" style={{scale:.7,background:"var(--lightgreen)",color:"#000",cursor:"pointer",border:0}}>Next→</div>
+    </div>
     </div>}
     </nav >
   )

@@ -10,7 +10,9 @@ const Skips = ({data,error,loading,mobile=false,setSkip}) => {
     return (
       <section style={{ position:"absolute",zIndex:4,width: "100vw", background: "transparent",height:"100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
       <div id="image-container"  style={{cursor:"pointer",position: "relative",display: "flex", alignItems: "center", flexDirection: "column",justifyContent:"center" }}>
-     {data.map((el,i)=>   <div onClick={e=>{setSkip(el) ; setSelectedIndex(i) ; gsap.to(".mainVisible",{width:"20%",ease:"circ.out"})}}
+     {data.map((el,i)=>   <div onClick={e=>{setSkip(el) ; setSelectedIndex(i) ;gsap.matchMedia().add("(max-width:600px)",()=>{
+      gsap.to(".mainVisible",{visibility:"hidden",position:"absolute"})
+     }) ;gsap.to(".mainVisible",{width:"20%",ease:"circ.out"})}}
         id={ !mobile ?"image"+i :"imageMob"+i } style={{display:"flex", filter: selectedIndex === i ? "invert(.7)" : "none",border: selectedIndex === i ? "10px solid #fff" : "none",position:"absolute",alignItems:"center",justifyContent:"center",  width: "70vw", height: "70vh", borderRadius: "2rem", backgroundImage: 'url("/16-yarder-skip.jpg")', backgroundSize: "cover",backgroundPosition:"center",overflow:"hidden" }}>
           <h1 style={{position:"absolute",right:20,top:20,color:"#000",borderRadius: "2rem ",padding:"0 20px", background:"#fff"}}>8 yard</h1>
 

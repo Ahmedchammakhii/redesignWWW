@@ -28,6 +28,7 @@
 .stepinfo {
   display: flex;
   flex-direction: column;
+  width: max-content !important;
 }
 
 .mainVisible {
@@ -41,6 +42,6 @@
   font-size: smaller;
 }
 .skipselected {
-    justify-content: space-evenly !important;
+    justify-content: space-around !important;
 
 }
