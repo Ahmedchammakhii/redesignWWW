@@ -1,26 +1,28 @@
 .navbar__container {
   width: 90vw;
   height: 20vh;
-  display: grid;
+  display: flex;
   color: #fff;
   font-size: clamp(1rem, 2vw, 8rem);
   line-height: 0.8;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  position: sticky;
+  position:fixed;
+  z-index: 10;
+  transition: cubic-bezier(0.95, 0.05, 0.795, 0.035) all 1s;
 }
 
 .step {
-  display: none;
+  display: flex;
   align-items: center;
   gap: 10px;
   background: #111;
   padding: 1rem;
   border-radius: 10px;
-  
+    width: 100%;
+  transition: cubic-bezier(0.95, 0.05, 0.795, 0.035) all 1s;
+
 }
 
 .stepinfo {
@@ -34,4 +36,11 @@
 
 .current {
   background-color: #1a1a1a;
+}
+.skipinfo {   
+  font-size: smaller;
+}
+.skipselected {
+    justify-content: space-evenly !important;
+
 }

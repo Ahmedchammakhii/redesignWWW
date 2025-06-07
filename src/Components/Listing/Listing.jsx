@@ -4,7 +4,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import Skips from "./Skips"
 import useFetch from "../../Hooks/useFetch"
-const Listing = () => {
+const Listing = ({setSkip}) => {
         const { data, loading, error } = useFetch('https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft');
 
     gsap.registerPlugin(ScrollTrigger);
@@ -38,7 +38,7 @@ const Listing = () => {
       const el = document.getElementById(`image${i}`);
       if (el) {
   tl.fromTo(el,{y:"100vh",z:3000,width:"85vw",height:"70vh",borderRadius:"2rem" ,
-          },{width:"85vw",height:"70vh",borderRadius: "2rem",y:(i+2)*10,z:0})
+          },{width:"90vw",height:"70vh",borderRadius: "2rem",y:(i+2)*10,z:0})
           
           
       }
@@ -100,7 +100,7 @@ const Listing = () => {
     <h1 style={{fontSize:"calc(1.5vw + 4rem)",fontWeight:"900",textAlign:"center" }}>{(i+1)%3==0 ? "CHOOSE" : "SKIPS®"} </h1>
     </div>
       ))}
-<Skips data={data} error={error} loading={loading}/>
+<Skips data={data} error={error} loading={loading} setSkip={setSkip}/>
     </div>
     <div id="theProjEffectMobile" style={{ position:"relative",flexDirection:"column",justifyContent:"center",alignItems:"center",width:"100vw",height:"100vh",overflow:"hidden",display:"none" }} >
       {Array(13).fill(0).map((el=>
@@ -108,7 +108,7 @@ const Listing = () => {
     <h1 style={{fontSize:"calc(1.5vw + 4rem)",fontWeight:"900",textAlign:"center",overflow:"hidden" }}>SKIPS®</h1>
     </div>
       ))}
-<Skips data={data} error={error} loading={loading} mobile={true}/>
+<Skips data={data} error={error} loading={loading} mobile={true} setSkip={setSkip}/>
     </div>
    
     </div>
