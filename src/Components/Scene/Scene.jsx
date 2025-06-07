@@ -7,8 +7,9 @@ function Model(props) {
   const ref = useRef(null)
   const { scene } = useGLTF('/model/skip-v1.glb')
     useFrame(() => {
-   
-      ref.current.rotation.y += 0.006;
+     requestAnimationFrame(() => {
+
+      ref.current.rotation.y += 0.006;})
  });
   return <primitive ref={ref} object={scene} {...props} />
 }
