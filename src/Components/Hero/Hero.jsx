@@ -30,6 +30,7 @@ const tl=gsap.timeline({scrollTrigger:{
 
 return ()=>ctx.revert()
 },[])
+const keywords=["Sustainable","Reliable","Solid","resistant","Robust","Compact"]
   return (
     <div className="Hero__container" >
       <p>Discover available Skips®</p>
@@ -43,27 +44,17 @@ return ()=>ctx.revert()
     <p style={{fontWeight:300}}>All Skips has built based on the same rules:</p>
     <div className="rules_rows">
 <div className="right__sideFlex_row">
-    <div className="roundButton">
-        <p>Sustainable</p>
+  {keywords.map((keyword,i)=>i<=2 &&  <div key={i+keyword} className="roundButton">
+        <p>{keyword}</p>
     </div>
-       <div className="roundButton">
-        <p>Reliable</p>
-    </div>   <div className="roundButton">
-        <p>Solid
-
-</p>
-    </div>
+    )}  
+     
 </div>
 <div className="right__sideFlex_row">
-    <div className="roundButton">
-        <p>resistant
-</p>
+      {keywords.map((keyword,i)=>i>2 &&  <div key={i+keyword} className="roundButton">
+        <p>{keyword}</p>
     </div>
-       <div className="roundButton">
-        <p>Robust</p>
-    </div>   <div className="roundButton">
-        <p>Compact</p>
-    </div>
+    )}  
 </div>
         </div>
     </div>
