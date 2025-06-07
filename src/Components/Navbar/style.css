@@ -1,8 +1,37 @@
 .navbar__container {
-    width: 10vw;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
+  width: 90vw;
+  height: 20vh;
+  display: grid;
+  color: #fff;
+  font-size: clamp(1rem, 2vw, 8rem);
+  line-height: 0.8;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+}
+
+.step {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  
+}
+
+.stepinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainVisible {
+  display: grid;
+}
+
+.current {
+  background-color: #1a1a1a;
 }
