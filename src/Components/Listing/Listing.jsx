@@ -96,15 +96,15 @@ const Listing = ({setSkip}) => {
   <div>
     <div  id="theProjEffect" style={{position:"relative", width:"100vw",height:"100vh",display:"grid",justifyItems:"center",gridTemplateColumns:"repeat(4,1fr)",gridRow:"auto",overflow:"hidden" }} >
       {Array(28).fill(0).map(((el,i)=>
-<div className="SkipTitle" style={{width:'min-content',height:"min-content",lineHeight:.9}}>
+<div className="SkipTitle" key={i+'skips'} style={{width:'min-content',height:"min-content",lineHeight:.9}}>
     <h1 style={{fontSize:"calc(1.5vw + 4rem)",fontWeight:"900",textAlign:"center" }}>{(i+1)%3==0 ? "CHOOSE" : "SKIPS®"} </h1>
     </div>
       ))}
 <Skips data={data} error={error} loading={loading} setSkip={setSkip}/>
     </div>
     <div id="theProjEffectMobile" style={{ position:"relative",flexDirection:"column",justifyContent:"center",alignItems:"center",width:"100vw",height:"100vh",overflow:"hidden",display:"none" }} >
-      {Array(13).fill(0).map((el=>
-<div  className="SkipTitleMobile" style={{width:'min-content',height:"min-content",lineHeight:.9}}>
+      {Array(13).fill(0).map(((el,i)=>
+<div  key={i+'skipsMobile'} className="SkipTitleMobile" style={{width:'min-content',height:"min-content",lineHeight:.9}}>
     <h1 style={{fontSize:"calc(1.5vw + 4rem)",fontWeight:"900",textAlign:"center",overflow:"hidden" }}>SKIPS®</h1>
     </div>
       ))}
