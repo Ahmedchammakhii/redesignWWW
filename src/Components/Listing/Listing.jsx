@@ -65,12 +65,12 @@ const Listing = () => {
             from: "random", 
             anticipatePin:1
           }})
-       requestAnimationFrame(() => {
+     requestAnimationFrame(() => {
     data.forEach((_, i) => {
-      const el = document.getElementById(`image${i}`);
+      const el = document.getElementById(`imageMob${i}`);
       if (el) {
-  tl.fromTo(el,{y:(1000*(i+1)),z:3000,width:"85vw",height:"70vh",borderRadius:"2rem" ,
-          },{width:"85vw",height:"70vh",borderRadius: "2rem",y:0,z:0})
+  tl.fromTo(el,{y:"100vh",z:3000,width:"85vw",height:"70vh",borderRadius:"2rem" ,
+          },{width:"85vw",height:"70vh",borderRadius: "2rem",y:(i+2)*10,z:0})
           
           
       }
@@ -108,7 +108,7 @@ const Listing = () => {
     <h1 style={{fontSize:"calc(1.5vw + 4rem)",fontWeight:"900",textAlign:"center",overflow:"hidden" }}>SKIPS®</h1>
     </div>
       ))}
-<Skips data={data} error={error} loading={loading}/>
+<Skips data={data} error={error} loading={loading} mobile={true}/>
     </div>
    
     </div>
